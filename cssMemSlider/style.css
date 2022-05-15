@@ -33,6 +33,7 @@ body {
     background-color: white;
     width: 400%;
     display: flex;
+    transition: 0.5s;
 }
 
 .slide {
@@ -60,6 +61,7 @@ img {
     display: flex;
     overflow: hidden;
     align-items: center;
+    transition: 0.5s;
 }
 
 .joke {
@@ -91,12 +93,54 @@ img {
 .button {
     height: 1rem;
     width: 1rem;
-    background-color: white;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
     border-radius: 50%;
+}
+
+.radio:hover .button {
+    background-color: #8282f0;
+    border-color: #8282f0;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#slide1:checked ~ .slider-wrapper .slider,
+#slide1:checked ~ .jokes-wrapper .jokes {
+    margin-left: 0%;
+}
+
+#slide2:checked ~ .slider-wrapper .slider,
+#slide2:checked ~ .jokes-wrapper .jokes {
+    margin-left: -100%;
+}
+  
+#slide3:checked ~ .slider-wrapper .slider,
+#slide3:checked ~ .jokes-wrapper .jokes {
+    margin-left: -200%;
+}
+
+#slide4:checked ~ .slider-wrapper .slider,
+#slide4:checked ~ .jokes-wrapper .jokes {
+    margin-left: -300%;
+}
+
+
+#slide1:checked ~ .buttons-wrapper label[for="slide1"] .button,
+#slide2:checked ~ .buttons-wrapper label[for="slide2"] .button,
+#slide3:checked ~ .buttons-wrapper label[for="slide3"] .button,
+#slide4:checked ~ .buttons-wrapper label[for="slide4"] .button {
+  background-color: transparent;
 }
 
 @media screen and (max-width: 768px) {
 
+    .header {
+        font-size: 2rem;
+    }
+    
     .jokes-wrapper {
         order: 1;
         width: 100%;
