@@ -101,6 +101,11 @@ img {
     border-color: #8282f0;
 }
 
+.radio:active .button {
+    background-color: transparent;
+    box-shadow: 0 0 0.4rem 0 #fff;
+}
+
 input[type="radio"] {
     display: none;
 }
